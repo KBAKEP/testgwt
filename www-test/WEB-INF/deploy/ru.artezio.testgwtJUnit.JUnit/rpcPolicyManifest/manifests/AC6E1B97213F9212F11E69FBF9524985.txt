@@ -1,0 +1,2 @@
+serviceClass: ru.artezio.shared.services.EmployeeService
+path: 5EF0B09D5BC9EF34143BD2E992AE2901.gwt.rpc

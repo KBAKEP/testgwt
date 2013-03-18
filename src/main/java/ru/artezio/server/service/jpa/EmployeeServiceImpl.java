@@ -11,25 +11,40 @@ import javax.persistence.Query;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ru.artezio.shared.entity.Department;
 import ru.artezio.shared.entity.Employee;
+import ru.artezio.shared.services.DepartmentService;
 import ru.artezio.shared.services.EmployeeService;
 
 
-@Service("jpaEmployeeService")
+@Service("employeeService")
 @Repository
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService {
 
 	private Log log = LogFactory.getLog(EmployeeServiceImpl.class);
 
+	@Autowired
+	private DepartmentService departmentService;
+	
 	@PersistenceContext
 	private EntityManager em;
 
+	public Employee hire(String name, String department) {
+		log.info("hiring employee " +name + " to department " + department);
+		Employee emp = new Employee(name);
+		Department dep = departmentService.findByName(department);
+		dep.addEmployee(emp);
+		em.persist(emp);
+		em.merge(dep);
+		return emp;
+	};
+	
 	public Employee hire(String name, Department department) {
 		log.info("hiring employee " +name + " to department " + department.getName());
 		Employee emp = new Employee(name);
@@ -37,6 +52,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		em.persist(emp);
 		return emp;
 	};
+	
+	
 
 	public Employee changeDepartment(Employee emp, Department dep) {
 		log.info("moving employee " +emp.getName() + " to department " + dep.getName());

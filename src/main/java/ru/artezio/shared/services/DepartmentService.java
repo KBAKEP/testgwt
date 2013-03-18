@@ -8,7 +8,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import ru.artezio.shared.entity.Department;
 import ru.artezio.shared.entity.Employee;
 
-@RemoteServiceRelativePath("testgwt/departmentService")
+@RemoteServiceRelativePath("springGwtServices/departmentService")
 public interface DepartmentService extends RemoteService {
 
 	public Department create(String name);
