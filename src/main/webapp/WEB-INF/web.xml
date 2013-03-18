@@ -6,16 +6,22 @@
 	version="3.0">
 
 
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>ru.artezio.server.GreetingServiceImpl</servlet-class>
-  </servlet>
+<listener>
+ <listener-class>
+  org.springframework.web.context.ContextLoaderListener
+ </listener-class>
+</listener>
 
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/testgwt/greet</url-pattern>
-  </servlet-mapping>
+<servlet> 
+	 <servlet-name>springGwtRemoteServiceServlet</servlet-name>
+ 	<servlet-class>org.spring4gwt.server.SpringGwtRemoteServiceServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	 <servlet-name>springGwtRemoteServiceServlet</servlet-name>
+ 	<url-pattern>/testgwt/springGwtServices/*</url-pattern>
+</servlet-mapping>
+ 
 
   <!-- Default page to serve -->
   <welcome-file-list>
