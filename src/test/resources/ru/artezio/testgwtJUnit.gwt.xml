@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='ru.artezio.testgwt' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/testgwt/greet" class="ru.artezio.server.GreetingServiceImpl" />
+
+</module>

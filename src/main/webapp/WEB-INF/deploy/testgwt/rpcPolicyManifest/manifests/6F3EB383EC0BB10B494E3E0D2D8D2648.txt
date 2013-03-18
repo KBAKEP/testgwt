@@ -1,0 +1,2 @@
+serviceClass: ru.artezio.client.GreetingService
+path: 3D6244CCEA51E43EDAB911417F04A351.gwt.rpc
