@@ -10,6 +10,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
@@ -23,6 +24,26 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class testgwt implements EntryPoint {
+	
+	/*
+	@Override
+	  public void onModuleLoad() {
+	    Label label = new Label("Hello GWT !!!");
+	    Button button = new Button("Say something");
+	    button.addClickHandler(new ClickHandler() {
+	      @Override
+	      public void onClick(ClickEvent event) {
+	        Window.alert("Hello, again");
+	      }
+	    });
+
+	    RootPanel.get().add(label);
+	    RootPanel.get().add(button);
+	  }
+	
+	*/
+	
+	
 	private static final String SERVER_ERROR = "An error occurred while "
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again. The error is : ";
